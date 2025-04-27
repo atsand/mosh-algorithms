@@ -114,7 +114,7 @@ class LinkedList {
 
       this.last = previous;
     };
-    
+
     this.size--;
   };
 
@@ -141,6 +141,19 @@ class LinkedList {
 
   public getSize(): number {
     return this.size;
+  };
+
+  public toArray(): Array {
+    let newArray = [];
+    let current = this.first;
+
+    while (current !== null) {
+      newArray.push(current.getValue());
+
+      current = current.getNext();
+    };
+
+    return newArray;
   };
 };
 

@@ -11,7 +11,7 @@ function main() {
   console.log('hdi', linkedList.getSize());
   linkedList.deleteLast();
 
-  console.log('hi', linkedList.getSize());
+  console.log('hi', linkedList.toArray());
 }
 
 main();
