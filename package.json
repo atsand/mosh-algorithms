@@ -1,0 +1,24 @@
+{
+  "name": "mosh-algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/atsand/mosh-algorithms#readme",
+  "bugs": {
+    "url": "https://github.com/atsand/mosh-algorithms/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atsand/mosh-algorithms.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0"
+  }
+}
