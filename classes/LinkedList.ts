@@ -143,7 +143,7 @@ class LinkedList {
     return this.size;
   };
 
-  public toArray(): Array {
+  public toArray(): Array<number> {
     let newArray = [];
     let current = this.first;
 
@@ -155,6 +155,54 @@ class LinkedList {
 
     return newArray;
   };
+
+  public reverse(): void {
+    let current = this.first.getNext();
+    let next: InstanceType<typeof LinkedList.MyNode> | null;
+    let previous: InstanceType<typeof LinkedList.MyNode> | null = this.first;
+
+    if (this.isEmpty()) {
+      throw Error('Unable to reverse empty LinkedList');
+    };
+
+    if (this.first === this.last) {
+      return;
+    };
+
+    while (current !== null) {
+      next = current.getNext();
+      current.setNext(previous);
+      previous = current;
+      current = next;
+    };
+
+    this.last = this.first;
+    this.last.setNext(null);
+    this.first = previous;
+
+    // My first attempt
+    // while (current !== null) {
+    //   next = current.getNext();
+
+    //   if (current === this.first) {
+    //     current.setNext(previous);
+
+    //     this.last = current;
+    //     previous = current;
+    //     current = next;
+    //   } else if (next === null) {
+    //       current.setNext(previous);
+
+    //       this.first = current;
+    //       current = next;
+    //     } else {
+    //     current.setNext(previous);
+
+    //     previous = current;
+    //     current = next;
+    //   }
+    // }
+  }
 };
 
 export default LinkedList;
