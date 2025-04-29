@@ -7,8 +7,8 @@ function main() {
   linkedList.addLast(20);
   linkedList.addLast(30);
   linkedList.addLast(40);
-  linkedList.reverse()
-  console.log('hi', linkedList);
+  
+  console.log('hi', linkedList.getKthFromTheEnd(4));
 }
 
 main();

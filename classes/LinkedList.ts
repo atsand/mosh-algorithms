@@ -202,6 +202,32 @@ class LinkedList {
     //     current = next;
     //   }
     // }
+  };
+
+  public getKthFromTheEnd(placesFromEnd: number): InstanceType<typeof LinkedList.MyNode> {
+    let pointerA: InstanceType<typeof LinkedList.MyNode> = this.first;
+    let pointerB: InstanceType<typeof LinkedList.MyNode> = this.first;
+    let spread = 0;
+
+    if (this.isEmpty()) {
+      throw Error('Empty LinkedList');
+    };
+
+    if (placesFromEnd > this.size) {
+      throw Error('Invalid input');
+    };
+
+    while (pointerB !== this.last) {
+      if (spread === placesFromEnd - 1) {
+        pointerA = pointerA.getNext();
+      } else {
+        spread++;
+      };
+
+      pointerB = pointerB.getNext();
+    };
+
+    return pointerA;
   }
 };
 
